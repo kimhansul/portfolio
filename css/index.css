@@ -1,0 +1,88 @@
+.header{
+    font-family: 'Gmarketsans';
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+.header .logo{
+    margin: 16px 0;
+}
+.header ul{
+    display: flex;
+}
+.header ul li{
+    padding: 0 30px;
+}
+.header a{
+    color: #1a1a1a;
+    transition: color .3s;
+}
+.header a:hover{
+    color: #33cccc;
+}
+.header ul li.active a{
+    color: #33cccc;
+}
+.container>div {
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    line-height: 100vh;
+}
+#project{
+    line-height: normal;
+    padding: 50px 0;
+}
+.project_img{
+    position: relative;
+}
+.pc_mockup{
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+.pc_mockup img{
+    width: 100%;
+}
+.pc_mockup a{
+    display: block;
+    width: 421px;
+    height: 263px;
+    overflow: hidden;
+    position: absolute;
+    top: 84px;
+    left: 94px;
+}
+.pc_mockup a img{
+    position: relative;
+}
+.mobile_mockup{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    position: absolute;
+    top: 180px;
+    right: -72px;
+}
+.mobile_mockup .mobile{
+    width: auto;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+.mobile_mockup a{
+    display: block;
+    width: 111px;
+    height: 242px;
+    overflow: hidden;
+    position: absolute;
+    top: 29px;
+    left: 96px;
+    z-index: 8;
+}
+.mobile_mockup a img{
+    width: 100%;
+    position: relative;
+}
