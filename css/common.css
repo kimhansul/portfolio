@@ -353,6 +353,9 @@
 ul, ol, dl{
     list-style: none;
 }
+a{
+  text-decoration: none;
+}
 .inner{
   max-width: 1400px;
   width: 100%;
@@ -368,4 +371,10 @@ ul, ol, dl{
     content: '';
     display: block;
     clear: both;
+}
+.btn_style{
+  color: #fff;
+  background-color: #41369c;
+  border-radius: 18px;
+  padding: 5px 30px;
 }
