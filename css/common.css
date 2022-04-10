@@ -373,8 +373,40 @@ a{
     clear: both;
 }
 .btn_style{
+  display: block;
+  width: max-content;
   color: #fff;
   background-color: #41369c;
-  border-radius: 18px;
+  border-radius: 20px;
+  border: 1px solid transparent;
   padding: 5px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+.btn_style span{
+  position: relative;
+  z-index: 5;
+}
+.btn_style::after{
+  content: '';
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transform: skewX(15deg);
+  transition: all .3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  z-index: 3;
+}
+.btn_style:hover{
+  border-color: #41369c;
+}
+.btn_style:hover span{
+  color: #41369c;
+}
+.btn_style:hover::after{
+  width: 150%;
+  left: -5%;
 }

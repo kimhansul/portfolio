@@ -16,7 +16,7 @@ gomenu.click(function(e){
     $('html, body').animate({scrollTop: offset},1000,'easeOutCirc');
 });
 
-const speed=100;
+const speed=300;
 const section=$('.section');
 $(window).on('scroll', function(){
     let scrollTop=$(window).scrollTop();
@@ -27,9 +27,11 @@ $(window).on('scroll', function(){
         if(scrollTop>=section.eq(i).offset().top-speed){
             $('.header ul>li').eq(i).addClass('active').siblings().removeClass('active');
         }
-        else if(scrollTop >= section.eq(2).offset().top-(speed+300)){
-            section.eq(2).find('.project_img').addClass('show');
-            section.eq(2).find('.project_info').addClass('show');
+        if(scrollTop >= section.eq(2).offset().top-(speed+100)){
+            section.eq(2).find('.project1 .pj01').addClass('show');
+        }
+        if(scrollTop >= section.eq(2).find('.project3').offset().top-(speed+100)){
+            section.eq(2).find('.project3 .pj03').addClass('show');
         }
     });
 });

@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.cf::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+body{
+    overflow-y: scroll;
+}
+.inner{
+    width: 1532px;
+    height: inherit;
+    margin: auto;
+    background: #bcbcbc;
+}
+.header_top{
+    width: 100%;
+    background: #565656;
+}
+.header_nav{
+    width: 100%;
+    background: #7e7e7e;
+}
+.main_banner{
+    width: 100%;
+    background: #9f9f9f;
+}
+.quick_menu{
+    width: 100%;
+    background: #7e7e7e;
+}
+.best_menu_wrap{
+    width: 100%;
+    background: #9f9f9f;
+}
+.app_banner{
+    width: 100%;
+    background: #7e7e7e;
+}
+.sns_wrap{
+    width: 100%;
+    background: #9f9f9f;
+}
+.youtube_wrap{
+    width: 100%;
+    background: #7e7e7e;
+}
+.sitemap_wrap{
+    width: 100%;
+    background: #9f9f9f;
+}
+.footer_btn{
+    width: 100%;
+    background: #7e7e7e;
+}
+.footer_info{
+    width: 100%;
+    background: #565656;
+}
+.logo{
+    width: 110px;
+    background: #e2e2e2;
+    height: 30px;
+}
+.utils_wrap{
+    width: 366px;
+    background: #e2e2e2;
+    height: 47px;
+}
+.gnb{
+    width: 540px;
+    background: #e2e2e2;
+    height: 45px;
+}
+.banner_box{
+    width: 100%;
+    background: #e2e2e2;
+    height: 440px;
+}
+.quick_menu_box{
+    width: 33.33333333%;
+    background: #e2e2e2;
+    height: 179px;
+    margin: 10px 0;
+}
+.best_menu_title{
+    width: 100%;
+    background: #e2e2e2;
+    height: 178px;
+    margin-bottom: 50px;
+}
+.best_menu{
+    width: 100%;
+    background: #e2e2e2;
+    height: 526px;
+}
+.app_banner_content{
+    width: 100%;
+    background: #e2e2e2;
+    height: 327px;
+}
+.sns_title{
+    width: 100%;
+    background: #e2e2e2;
+    height: 178px;
+    margin-bottom: 10px;
+}
+.sns_content{
+    width: 100%;
+    background: #e2e2e2;
+    height: 342px;
+}
+.youtube_title{
+    width: 100%;
+    background: #e2e2e2;
+    height: 178px;
+    margin-bottom: 10px;
+}
+.youtube_content{
+    width: 100%;
+    background: #e2e2e2;
+    height: 280px;
+}
+.sitemap{
+    width: 100%;
+    background: #e2e2e2;
+    height: 325px;
+}
+.family_btn{
+    width: 160px;
+    background: #e2e2e2;
+    height: 46px;
+}
+.footer_info_content{
+    width: 100%;
+    background: #e2e2e2;
+    height: 250px;
+}
