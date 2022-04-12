@@ -18,7 +18,7 @@
     display: flex;
 }
 .header ul li{
-    line-height: 50px;
+    line-height: 82px;
     padding: 0 30px;
 }
 .header a{
@@ -46,14 +46,16 @@
 .header ul li.active a::after{
     width: 100%;
 }
-.container>div {
-    width: 100%;
-    height: 100vh;
-    font-size: 40px;
-}
+
 #main{
     line-height: normal;
+}
+#main .inner{
+    height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 #main .main_typo p{
     color: #1a1a1a;
@@ -80,7 +82,7 @@
     to{width: 100%;}
 }
 #main .main_typo p:first-child{
-    margin-bottom: 34px;
+    margin-bottom: 20px;
 }
 .mainbtn_wrap{
     margin-top: 57px;
@@ -92,6 +94,68 @@
     margin-right: 30px;
 }
 
+.main_photo{
+    width: 50%;
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+}
+.main_photo span{
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.main_photo .main_object{
+    width: 100%;
+}
+.main_photo .my_photo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main_photo span::before, .main_photo span::after{
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+.main_photo span:first-child:before{
+    background-image: url(../image/idea.png);
+    top: -45px;
+    left: 165px;
+}
+.main_photo span:first-child:after{
+    background-image: url(../image/website.png);
+    top: 158px;
+    right: 85px;
+}
+.main_photo span:last-child:before{
+    background-image: url(../image/note.png);
+    top: -200px;
+    left: 78px;
+}
+.main_photo span:last-child::after{
+    display: none;
+}
+
+.scrolldown_ico{
+    width: 60px;
+    font-size: 60px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrolldown 2s ease-in-out infinite;
+}
+@keyframes scrolldown{
+    0%{transform: translateY(-20px); opacity: 0;}
+    50%{opacity: 1;}
+    100%{transform: translateY(20px); opacity: 0;}
+}
+
 .title{
     color: #1a1a1a;
     font-size: 48px;
@@ -100,8 +164,7 @@
 }
 
 #about_me{
-    height: inherit;
-    padding: 200px 0 350px;
+    padding: 200px 0;
 }
 .profile_photo{
     width: 260px;
@@ -164,14 +227,63 @@
 #skills{
     color: #fff;
     background-color: #41369c;
-    padding-top: 100px;
+    padding: 150px 0;
 }
 #skills .title{
     color: #fff;
+    margin-bottom: 100px;
+}
+.skill_box{
+    width: calc(100% / 4);
+    text-align: center;
+}
+.skill_chart{
+    margin-bottom: 28px;
+    position: relative;
+}
+.skill_chart::before{
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.type_html .skill_chart::before{
+    background-image: url(../image/skills_html_logo.png);
+}
+.type_css .skill_chart::before{
+    background-image: url(../image/skills_css_logo.png);
+}
+.type_jsjq .skill_chart::before{
+    background-image: url(../image/skills_js_logo.png);
+}
+.type_react .skill_chart::before{
+    background-image: url(../image/skills_react_logo.png);
+    background-size: 100%;
+}
+.skill_rotate{
+    font-size: 36px;
+    display: block;
+    margin-bottom: 16px;
+}
+.skill_subtitle{
+    font-size: 24px;
+    margin: 0;
+}
+.skill_content{
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 50px;
 }
 
 #project{
-    height: inherit;
     line-height: normal;
     padding: 150px 0;
     margin-bottom: 50px;
