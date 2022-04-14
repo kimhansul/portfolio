@@ -38,7 +38,7 @@
     transition: width .2s ease-in-out;
 }
 .header a:hover{
-    color: #41369c;
+    color: #33cccc;
 }
 .header ul li.active a{
     color: #41369c;
@@ -446,6 +446,9 @@
     color: #41369c;
     font-size: 24px;
 }
+.project_info .project_numbering{
+    color: #41369c;
+}
 .project_info p{
     width: 80%;
     line-height: 24px;
@@ -491,7 +494,7 @@
 }
 .project_link{
     position: absolute;
-    top: 19px;
+    top: 36px;
     right: 236px;
 }
 .project_link.link_type02{
