@@ -1,3 +1,5 @@
+const gnb=$('.header');
+
 const gomain=$('.header .logo a');
 gomain.click(function(e){
     e.preventDefault();
@@ -35,28 +37,61 @@ function chartAnimate(){
 
 const speed=300;
 const section=$('.section');
-$(window).on('scroll', function(){
-    let scrollTop=$(window).scrollTop();
-    section.each(function(i){
-        if(scrollTop<$('#about_me').offset().top-speed){
-            $('.header ul>li').removeClass('active');
+$(window).on({
+    scroll: function(){
+        let scrollTop=$(window).scrollTop();
+        if(scrollTop>gnb.innerHeight()){
+            gnb.addClass('active');
         }
-        if(scrollTop>=section.eq(i).offset().top-speed){
-            $('.header ul>li').eq(i).addClass('active').siblings().removeClass('active');
+        if(scrollTop<gnb.innerHeight()){
+            gnb.removeClass('active');
         }
-        if(scrollTop >= section.eq(1).offset().top-(speed)){
-            if(!$('.skill_slide').hasClass('active')){
-                chartAnimate();
-                $('.skill_slide').addClass('active');
+        section.each(function(i){
+            if(scrollTop<$('#about_me').offset().top-speed){
+                $('.header ul>li').removeClass('active');
             }
-        }
-        if(scrollTop >= section.eq(2).offset().top-(speed+100)){
-            section.eq(2).find('.project1 .pj01').addClass('show');
-        }
-        if(scrollTop >= section.eq(2).find('.project2').offset().top-(speed+150)){
-            section.eq(2).find('.project2 .pj02').addClass('show');
-        }
-    });
+            if(scrollTop>=section.eq(i).offset().top-speed){
+                $('.header ul>li').eq(i).addClass('active').siblings().removeClass('active');
+            }
+            if(scrollTop >= section.eq(1).offset().top-(speed)){
+                if(!$('.skill_slide').hasClass('active')){
+                    chartAnimate();
+                    slideTimer();
+                    $('.skill_slide').addClass('active');
+                }
+            }
+            if(scrollTop >= section.eq(2).offset().top-(speed+100)){
+                section.eq(2).find('.project1 .pj01').addClass('show');
+            }
+            if(scrollTop >= section.eq(2).find('.project2').offset().top-(speed+150)){
+                section.eq(2).find('.project2 .pj02').addClass('show');
+            }
+            if(scrollTop >= section.eq(2).find('.project3').offset().top-(speed+150)){
+                section.eq(2).find('.project3 .pj03').addClass('show');
+            }
+            if(scrollTop >= section.eq(2).find('.react_project').offset().top-(speed+150)){
+                section.eq(2).find('.react_project .react_pj').addClass('show');
+            }
+            if(scrollTop >= section.eq(2).find('.uiux_project').offset().top-(speed+150)){
+                section.eq(2).find('.uiux_project .uiux_pj').addClass('show');
+            }
+            if(scrollTop>=section.eq(3).offset().top-speed){
+                section.eq(3).find('.diary_link').addClass('active');
+            }
+            if(scrollTop>=section.eq(section.length-1).offset().top-(speed+100)){
+                $('.header ul>li').eq($('.header ul>li').length-1).addClass('active').siblings().removeClass('active');
+            }
+        });
+    }, mousemove: function(e){
+        let pageX=e.pageX, pageY=e.pageY;
+        let standardX=$(window).width()/2-pageX, standardY=$(window).innerHeight()/2-pageY;
+
+        const svgImg=$('.main_object').contents();
+        const lineObj=svgImg.find('#lines'), dotObj=svgImg.find('#dots'), waveObj=svgImg.find('#waves');
+        lineObj.attr({style: 'transform: translate('+standardX/30+'px, '+standardY/70+'px)'});
+        dotObj.attr({style: 'transform: translate('+standardX/90+'px, '+standardY/90+'px)'});
+        waveObj.attr({style: 'transform: translate('+standardX/90+'px, '+standardY/30+'px)'});
+    }
 });
 
 const slideBox=$('.skill_slide_wrap>div'), nextBtn=$('.slidenext_btn'), prevBtn=$('.slideprev_btn'), slideBtns=$('#skills>button');
@@ -143,7 +178,14 @@ prevBtn.click(function(e){
 function slideTimer(){
     timer=setInterval(skillSlide,4000);
 }
-slideTimer();
+$(window).resize(function(){
+    if($(window).width()<1000){
+        clearInterval(timer);
+        if($(window).scrollTop() >= section.eq(1).offset().top){
+            skillBarAni();
+        }
+    }
+});
 
 $('.pc_hidden').hover(
     function(){
@@ -169,3 +211,10 @@ $('.mobile_hidden').hover(
         img.stop().animate({top:0},2000);
     }
 );
+
+function skillBarAni(){
+    $('.skill_bar').each(function(){
+        skillBar=$(this).find('.bar'), barData=skillBar.attr('data-rate');
+        skillBar.stop().animate({width: barData+'%'},3000);
+    });
+}
