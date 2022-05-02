@@ -73,7 +73,7 @@ p{
   content: '';
   width: 18px;
   height: 5px;
-  background: url(../image/btn_arrow.png) no-repeat 0px 0px;
+  background: url(https://res.cloudinary.com/djcuwf7il/image/upload/q_auto/portfolio/btn_arrow_leipqc.png) no-repeat 0px 0px;
   position: absolute;
   top: 14px;
   right: 22px;
@@ -84,7 +84,7 @@ p{
   border-color: #41369c;
 }
 .btn_style:hover::before{
-  background: url(../image/btn_arrow.png) no-repeat 0px -5px;
+  background-position: 0px -5px;
   margin-right: -4px;
 }
 .btn_style:hover span{
