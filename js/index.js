@@ -91,6 +91,7 @@ $(window).on({
         lineObj.attr({style: 'transform: translate('+standardX/30+'px, '+standardY/70+'px)'});
         dotObj.attr({style: 'transform: translate('+standardX/90+'px, '+standardY/90+'px)'});
         waveObj.attr({style: 'transform: translate('+standardX/90+'px, '+standardY/30+'px)'});
+        $('.my_photo').attr({style: 'transform: translate('+standardX/110+'px, '+standardY/110+'px)'});
     }
 });
 
