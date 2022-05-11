@@ -136,11 +136,11 @@
     width: 100%;
 }
 .main_photo .my_photo{
-    width: 65%;
+    max-width: 100%;
+    width: 80%;
     position: absolute;
-    top: -15%;
-    left: 15%;
-    filter: drop-shadow(8px 2px 12px rgba(49, 44, 94, .3));
+    top: -6%;
+    left: 4%;
 }
 .main_photo span::before, .main_photo span::after{
     content: '';
